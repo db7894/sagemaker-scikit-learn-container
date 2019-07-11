@@ -7,5 +7,6 @@ COPY dist/sagemaker_sklearn_container-1.0-py2.py3-none-any.whl /sagemaker_sklear
 RUN pip install --no-cache /sagemaker_sklearn_container-1.0-py2.py3-none-any.whl && \
     rm /sagemaker_sklearn_container-1.0-py2.py3-none-any.whl
 
+ENV PATH="/opt/program:${PATH}"
 ENV SAGEMAKER_TRAINING_MODULE sagemaker_sklearn_container.training:main
 ENV SAGEMAKER_SERVING_MODULE sagemaker_sklearn_container.serving:main
